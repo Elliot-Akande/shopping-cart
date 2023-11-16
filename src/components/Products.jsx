@@ -2,7 +2,7 @@ import { useOutletContext } from "react-router-dom";
 import ProductCard from "./ProductCard";
 
 function Products() {
-  const [products] = useOutletContext();
+  const { products } = useOutletContext();
 
   return (
     <main>

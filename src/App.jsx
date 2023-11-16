@@ -39,7 +39,7 @@ function App() {
         </p>
       ) : (
         <Outlet
-          context={[products, cart, setCart, isCartOpen, setIsCartOpen]}
+          context={{ products, cart, setCart, isCartOpen, setIsCartOpen }}
         />
       )}
     </>
