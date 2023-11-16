@@ -24,6 +24,35 @@ const useProductData = () => {
   return { products, error };
 };
 
+const cartOperations = (cart, setCart) => {
+  const modify = (id, amount) => {
+    let product = { id, amount };
+    const index = cart.findIndex((item) => item.id === id);
+    if (index >= 0) {
+      const updatedCart = [...cart];
+      updatedCart[index].amount += amount;
+      if (updatedCart[index].amount <= 0) updatedCart.splice(index, 1);
+      product = updatedCart;
+    }
+
+    setCart([...cart, product]);
+  };
+
+  const remove = (id) => {
+    const index = cart.findIndex((item) => item.id === id);
+    if (index >= 0) {
+      const updatedCart = [...cart];
+      updatedCart.splice(index, 1);
+      setCart(updatedCart);
+    }
+  };
+
+  return {
+    modify,
+    remove,
+  };
+};
+
 function App() {
   const { products, error } = useProductData();
   const [cart, setCart] = useState([]);
@@ -39,7 +68,13 @@ function App() {
         </p>
       ) : (
         <Outlet
-          context={{ products, cart, setCart, isCartOpen, setIsCartOpen }}
+          context={{
+            products,
+            isCartOpen,
+            setIsCartOpen,
+            cart,
+            cartOperations: cartOperations(cart, setCart),
+          }}
         />
       )}
     </>
