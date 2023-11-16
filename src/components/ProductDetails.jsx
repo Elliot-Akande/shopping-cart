@@ -8,15 +8,6 @@ function ProductDetails() {
   const id = parseInt(useParams().id, 10);
   const product = products ? products.find((item) => item.id === id) : null;
 
-  const handleAmountChange = (e) => {
-    const { value } = e.target;
-    if (!isNaN(parseInt(value, 10))) {
-      setAmount(parseInt(value, 10));
-    } else {
-      setAmount(value);
-    }
-  };
-
   const incrementAmount = () => {
     setAmount((prev) => {
       if (isNaN(parseInt(prev, 10)) || prev < 1) return 1;
@@ -29,6 +20,19 @@ function ProductDetails() {
       if (isNaN(parseInt(prev, 10)) || prev <= 1) return 1;
       return prev - 1;
     });
+  };
+
+  const handleAmountChange = (e) => {
+    const { value } = e.target;
+    if (!isNaN(parseInt(value, 10))) {
+      setAmount(parseInt(value, 10));
+    } else {
+      setAmount(value);
+    }
+  };
+
+  const handleAddToCart = () => {
+    if (!isNaN(amount) && amount > 0) cartManager.modify(id, amount);
   };
 
   return (
@@ -51,7 +55,7 @@ function ProductDetails() {
               />
               <button onClick={incrementAmount}>+</button>
             </div>
-            <button>Add to cart</button>
+            <button onClick={handleAddToCart}>Add to cart</button>
           </div>
         </>
       )}
