@@ -24,7 +24,7 @@ const useProductData = () => {
   return { products, error };
 };
 
-const cartOperations = (cart, setCart) => {
+const cartManager = (cart, setCart) => {
   const modify = (id, amount) => {
     let product = { id, amount };
     const index = cart.findIndex((item) => item.id === id);
@@ -73,7 +73,7 @@ function App() {
             isCartOpen,
             setIsCartOpen,
             cart,
-            cartOperations: cartOperations(cart, setCart),
+            cartManager: cartManager(cart, setCart),
           }}
         />
       )}
