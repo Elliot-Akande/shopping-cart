@@ -4,7 +4,7 @@ import NavBar from "./components/NavBar";
 import "./App.css";
 
 const useProductData = () => {
-  const [products, setData] = useState(null);
+  const [products, setProducts] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -15,9 +15,9 @@ const useProductData = () => {
         if (!response.ok) {
           throw new Error(`HTTP error: status code ${response.status}`);
         }
-        response.json();
+        return response.json();
       })
-      .then((response) => setData(response))
+      .then((response) => setProducts(response))
       .catch((err) => setError(err));
   }, []);
 
@@ -32,7 +32,16 @@ function App() {
   return (
     <>
       <NavBar />
-      <Outlet context={[products, cart, setCart, isCartOpen, setIsCartOpen]} />
+      {error ? (
+        <p>
+          There was a problem loading page data. If this problem persists please
+          contact the site owner
+        </p>
+      ) : (
+        <Outlet
+          context={[products, cart, setCart, isCartOpen, setIsCartOpen]}
+        />
+      )}
     </>
   );
 }
