@@ -1,10 +1,17 @@
-import React from "react";
-import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 function NavBar(props) {
-  return <div>NavBar</div>;
+  return (
+    <nav>
+      <Link>Store Name</Link>
+      <div className="links">
+        <Link to="/">Home</Link>
+        <Link to="/products">Products</Link>
+        <Link>About</Link>
+      </div>
+      <button>Basket</button>
+    </nav>
+  );
 }
-
-NavBar.propTypes = {};
 
 export default NavBar;
