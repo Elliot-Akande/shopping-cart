@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./App.css";
+import NavBar from "./components/NavBar";
 
 const useProductData = () => {
   const [data, setData] = useState(null);
@@ -24,7 +25,12 @@ const useProductData = () => {
 
 function App() {
   const { data, error } = useProductData();
-  return <></>;
+
+  return (
+    <>
+      <NavBar />
+    </>
+  );
 }
 
 export default App;
