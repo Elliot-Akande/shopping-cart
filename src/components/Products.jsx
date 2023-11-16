@@ -1,10 +1,17 @@
-import React from "react";
-import PropTypes from "prop-types";
+import { useOutletContext } from "react-router-dom";
+import ProductCard from "./ProductCard";
 
-function Products(props) {
-  return <div>Products</div>;
+function Products() {
+  const [products] = useOutletContext();
+
+  return (
+    <main>
+      {products &&
+        products.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+    </main>
+  );
 }
-
-Products.propTypes = {};
 
 export default Products;
