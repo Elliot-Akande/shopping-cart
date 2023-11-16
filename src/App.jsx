@@ -25,17 +25,16 @@ const useProductData = () => {
 };
 
 const cartManager = (cart, setCart) => {
-  const modify = (id, amount) => {
-    let product = { id, amount };
+  const modify = (id, _amount) => {
     const index = cart.findIndex((item) => item.id === id);
     if (index >= 0) {
       const updatedCart = [...cart];
-      updatedCart[index].amount += amount;
+      updatedCart[index].amount += _amount;
       if (updatedCart[index].amount <= 0) updatedCart.splice(index, 1);
-      product = updatedCart;
+      setCart(updatedCart);
+    } else {
+      setCart([...cart, { id, amount: _amount }]);
     }
-
-    setCart([...cart, product]);
   };
 
   const remove = (id) => {
