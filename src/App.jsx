@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import "./App.css";
-import NavBar from "./components/NavBar";
 import { Outlet } from "react-router-dom";
+import NavBar from "./components/NavBar";
+import "./App.css";
 
 const useProductData = () => {
-  const [data, setData] = useState(null);
+  const [products, setData] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -21,17 +21,18 @@ const useProductData = () => {
       .catch((err) => setError(err));
   }, []);
 
-  return { data, error };
+  return { products, error };
 };
 
 function App() {
-  const { data, error } = useProductData();
+  const { products, error } = useProductData();
   const [cart, setCart] = useState([]);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   return (
     <>
       <NavBar />
-      <Outlet />
+      <Outlet context={[products, cart, setCart, isCartOpen, setIsCartOpen]} />
     </>
   );
 }
