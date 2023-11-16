@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
-import NavBar from "./components/NavBar";
 import "./App.css";
+import NavBar from "./components/NavBar/NavBar";
 
 const useProductData = () => {
   const [products, setProducts] = useState(null);
