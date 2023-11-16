@@ -9,15 +9,26 @@ function ProductDetails() {
   const product = products ? products.find((item) => item.id === id) : null;
 
   const handleAmountChange = (e) => {
-    setAmount(parseInt(e.target.value, 10));
+    const { value } = e.target;
+    if (!isNaN(parseInt(value, 10))) {
+      setAmount(parseInt(value, 10));
+    } else {
+      setAmount(value);
+    }
   };
 
   const incrementAmount = () => {
-    setAmount((prev) => prev + 1);
+    setAmount((prev) => {
+      if (isNaN(parseInt(prev, 10)) || prev < 1) return 1;
+      return prev + 1;
+    });
   };
 
   const decrementAmount = () => {
-    setAmount((prev) => prev - 1);
+    setAmount((prev) => {
+      if (isNaN(parseInt(prev, 10)) || prev <= 1) return 1;
+      return prev - 1;
+    });
   };
 
   return (
@@ -36,6 +47,7 @@ function ProductDetails() {
                 name="amount"
                 value={amount}
                 onChange={handleAmountChange}
+                min={1}
               />
               <button onClick={incrementAmount}>+</button>
             </div>
