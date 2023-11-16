@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import Rating from "./Rating";
+import Rating from "../Rating/Rating";
 
 function ProductCard({ product }) {
   const { id, title, price, category, description, image, rating } = product;

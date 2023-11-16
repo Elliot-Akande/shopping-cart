@@ -1,6 +1,6 @@
 import { useOutletContext, useParams } from "react-router-dom";
 import { useState } from "react";
-import ProductAmountControl from "./ProductAmountControl";
+import ProductAmountControl from "../ProductAmountControl/ProductAmountControl";
 
 function ProductDetails() {
   const [amount, setAmount] = useState(1);
