@@ -39,6 +39,9 @@ function ProductAmountControl({ amount, setAmount }) {
   );
 }
 
-ProductAmountControl.propTypes = {};
+ProductAmountControl.propTypes = {
+  amount: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  setAmount: PropTypes.func,
+};
 
 export default ProductAmountControl;
