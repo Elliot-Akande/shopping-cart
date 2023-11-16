@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import NavBar from "./components/NavBar";
+import { Outlet } from "react-router-dom";
 
 const useProductData = () => {
   const [data, setData] = useState(null);
@@ -29,6 +30,7 @@ function App() {
   return (
     <>
       <NavBar />
+      <Outlet />
     </>
   );
 }
