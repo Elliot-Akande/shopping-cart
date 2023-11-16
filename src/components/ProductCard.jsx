@@ -15,4 +15,15 @@ function ProductCard({ product }) {
   );
 }
 
+ProductCard.propTypes = {
+  product: PropTypes.shape({
+    title: PropTypes.string,
+    price: PropTypes.number,
+    category: PropTypes.string,
+    description: PropTypes.string,
+    image: PropTypes.string,
+    rating: PropTypes.object,
+  }),
+};
+
 export default ProductCard;
