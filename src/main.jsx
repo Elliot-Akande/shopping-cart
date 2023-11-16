@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
-import Home from "./components/Home.jsx";
-import Products from "./components/Products.jsx";
-import ProductDetails from "./components/ProductDetails.jsx";
-import "./index.css";
+import Home from "./components/Home/Home.jsx";
+import Products from "./components/Products/Products.jsx";
+import ProductDetails from "./components/ProductDetails/ProductDetails.jsx";
+import ErrorPage from "./components/ErrorPage/ErrorPage.jsx";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import ErrorPage from "./components/ErrorPage.jsx";
+import "./index.css";
 
 const router = createBrowserRouter([
   {
