@@ -26,6 +26,7 @@ const useProductData = () => {
 
 function App() {
   const { data, error } = useProductData();
+  const [cart, setCart] = useState([]);
 
   return (
     <>
