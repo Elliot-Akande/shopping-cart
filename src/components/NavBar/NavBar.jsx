@@ -10,17 +10,19 @@ function NavBar() {
       </Link>
       <ul className={styles.links}>
         <li>
-          <Link className={styles.link} to="/">
-            HOME
+          <Link className={styles.link} to="/products/clothing">
+            CLOTHING
           </Link>
         </li>
         <li>
-          <Link className={styles.link} to="/products">
-            PRODUCTS
+          <Link className={styles.link} to="/products/accessories">
+            ACCESSORIES
           </Link>
         </li>
         <li>
-          <Link className={styles.link}>ABOUT</Link>
+          <Link className={styles.link} to="/products/technology">
+            TECHNOLOGY
+          </Link>
         </li>
       </ul>
       <button className={styles.basket} aria-label="basket">

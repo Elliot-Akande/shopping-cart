@@ -8,7 +8,7 @@ function ProductCard({ product }) {
   const { id, title, price, category, description, image, rating } = product;
 
   return (
-    <Link to={`/products/${id}`} className={styles.link}>
+    <Link to={`/product/${id}`} className={styles.link}>
       <img className={styles.img} src={image} alt={title} />
       <hr className={styles.hr}></hr>
       <div className={styles.container}>

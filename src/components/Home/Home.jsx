@@ -6,7 +6,7 @@ function Home() {
     <main className={styles.main}>
       <div className={styles.logo}>AKANDE</div>
       <h1 className={styles.h1}>THE HUGE BLACK FRIDAY SALE</h1>
-      <Link className={styles.link} to="/products">
+      <Link className={styles.link} to="/products/clothing">
         SHOP NOW
       </Link>
     </main>

@@ -30,6 +30,11 @@
   font-size: 14px;
 }
 
+.divider {
+  width: 1px;
+  background-color: var(--primary);
+}
+
 .basket {
   margin-right: -6px;
   padding: 6px;
