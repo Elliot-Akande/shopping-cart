@@ -31,7 +31,7 @@ function ProductDetails() {
             <div className={styles.section}>
               <ProductAmountControl amount={amount} setAmount={setAmount} />
               <button className={styles.button} onClick={handleAddToCart}>
-                Add to cart
+                ADD TO CART
               </button>
             </div>
           </div>
