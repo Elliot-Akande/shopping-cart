@@ -12,7 +12,7 @@
   font-size: 32px;
   font-weight: bold;
   letter-spacing: -0.01em;
-  color: var(--primary);
+  color: var(--accent);
 }
 
 .links {
