@@ -14,7 +14,7 @@ function ProductCard({ product }) {
       <div className={styles.container}>
         <h2 className={styles.title}>{title}</h2>
         <Rating rating={rating} />
-        <Price className={styles.price} price={price}></Price>
+        <Price price={price}></Price>
       </div>
     </Link>
   );
