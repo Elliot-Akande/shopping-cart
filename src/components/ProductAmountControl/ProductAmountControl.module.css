@@ -31,6 +31,10 @@
   height: 40px;
   width: 40px;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   color: var(--primary);
   background-color: var(--secondary);
   border-radius: 0;

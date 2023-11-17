@@ -1,5 +1,7 @@
 import PropTypes from "prop-types";
 import styles from "./ProductAmountControl.module.css";
+import AddIcon from "@mui/icons-material/Add";
+import RemoveIcon from "@mui/icons-material/Remove";
 
 function ProductAmountControl({ amount, setAmount }) {
   const increment = () => {
@@ -28,7 +30,7 @@ function ProductAmountControl({ amount, setAmount }) {
   return (
     <div className={styles.div}>
       <button className={styles.left} onClick={decrement}>
-        -
+        <RemoveIcon sx={{ color: "#fff" }} />
       </button>
       <input
         className={styles.input}
@@ -39,7 +41,7 @@ function ProductAmountControl({ amount, setAmount }) {
         min={1}
       />
       <button className={styles.right} onClick={increment}>
-        +
+        <AddIcon sx={{ color: "#fff" }} />
       </button>
     </div>
   );
