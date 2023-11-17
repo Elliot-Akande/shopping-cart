@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+}
+
+.count {
+  font-size: 14px;
+  color: var(--text);
+}
