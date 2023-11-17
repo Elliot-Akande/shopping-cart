@@ -1,0 +1,16 @@
+.strong {
+  padding-top: 12px;
+  display: flex;
+  align-items: start;
+  gap: 2px;
+
+  color: var(--text);
+  font-size: 16px;
+  line-height: 0.4;
+  font-weight: normal;
+}
+
+.pounds {
+  font-size: 26px;
+  font-weight: bold;
+}
