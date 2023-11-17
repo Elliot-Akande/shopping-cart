@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./NavBar.module.css";
+import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 
 function NavBar() {
   return (
@@ -22,7 +23,9 @@ function NavBar() {
           <Link className={styles.link}>ABOUT</Link>
         </li>
       </ul>
-      <button className={styles.basket}>BASKET</button>
+      <button className={styles.basket} aria-label="basket">
+        <ShoppingBagOutlinedIcon sx={{ fontSize: 24 }} />
+      </button>
     </nav>
   );
 }
