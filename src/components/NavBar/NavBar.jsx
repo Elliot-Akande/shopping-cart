@@ -5,24 +5,24 @@ function NavBar() {
   return (
     <nav className={styles.nav}>
       <Link className={styles.logo} to="/">
-        Store Name
+        AKANDE
       </Link>
       <ul className={styles.links}>
         <li>
           <Link className={styles.link} to="/">
-            Home
+            HOME
           </Link>
         </li>
         <li>
           <Link className={styles.link} to="/products">
-            Products
+            PRODUCTS
           </Link>
         </li>
         <li>
-          <Link className={styles.link}>About</Link>
+          <Link className={styles.link}>ABOUT</Link>
         </li>
       </ul>
-      <button className={styles.basket}>Basket</button>
+      <button className={styles.basket}>BASKET</button>
     </nav>
   );
 }
