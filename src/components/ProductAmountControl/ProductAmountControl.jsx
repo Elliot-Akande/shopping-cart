@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import styles from "./ProductAmountControl.module.css";
 
 function ProductAmountControl({ amount, setAmount }) {
   const increment = () => {
@@ -25,16 +26,21 @@ function ProductAmountControl({ amount, setAmount }) {
   };
 
   return (
-    <div>
-      <button onClick={decrement}>-</button>
+    <div className={styles.div}>
+      <button className={styles.left} onClick={decrement}>
+        -
+      </button>
       <input
+        className={styles.input}
         type="number"
         name="amount"
         value={amount}
         onChange={handleChange}
         min={1}
       />
-      <button onClick={increment}>+</button>
+      <button className={styles.right} onClick={increment}>
+        +
+      </button>
     </div>
   );
 }
