@@ -24,7 +24,7 @@ function NavBar() {
         </li>
       </ul>
       <button className={styles.basket} aria-label="basket">
-        <ShoppingBagOutlinedIcon sx={{ fontSize: 24 }} />
+        <ShoppingBagOutlinedIcon sx={{ fontSize: 24, color: "#fff" }} />
       </button>
     </nav>
   );

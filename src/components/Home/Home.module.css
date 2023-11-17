@@ -41,8 +41,8 @@
   font-weight: bold;
   font-size: 18px;
 
-  color: var(--text);
-  background-color: var(--primary);
+  color: var(--primary);
+  background-color: var(--secondary);
   border-radius: 4px;
 }
 
