@@ -21,6 +21,11 @@
   -moz-appearance: textfield;
 }
 
+.input:focus-visible,
+.input:focus {
+  outline: none;
+}
+
 .button {
   padding: 0;
   height: 40px;
@@ -29,6 +34,15 @@
   color: var(--primary);
   background-color: var(--secondary);
   border-radius: 0;
+}
+
+.button:focus-visible {
+  border-color: var(--accent);
+  outline: none;
+}
+
+.button:focus {
+  outline: none;
 }
 
 .left {
