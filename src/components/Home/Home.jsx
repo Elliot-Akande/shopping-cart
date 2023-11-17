@@ -1,17 +1,16 @@
-import React from "react";
-import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import styles from "./Home.module.css";
 
-function Home(props) {
+function Home() {
   return (
-    <main>
-      <div>Store Name</div>
-      <h1>THE HUGE BLACK FRIDAY SALE</h1>
-      <Link to="/products">SHOP NOW</Link>
+    <main className={styles.main}>
+      <div className={styles.logo}>AKANDE</div>
+      <h1 className={styles.h1}>THE HUGE BLACK FRIDAY SALE</h1>
+      <Link className={styles.link} to="/products">
+        SHOP NOW
+      </Link>
     </main>
   );
 }
-
-Home.propTypes = {};
 
 export default Home;
