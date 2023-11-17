@@ -1,0 +1,43 @@
+.main {
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.img {
+  height: 500px;
+  width: 500px;
+  padding: 20px;
+
+  object-fit: contain;
+  background-color: var(--primary);
+  border-radius: 4px;
+}
+
+.div {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.title {
+  font-size: 32px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.description {
+  line-height: 1.5;
+}
+
+.button {
+  background-color: var(--primary);
+}
