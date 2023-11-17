@@ -1,10 +1,12 @@
-:root {
-  --primary: #1a1a1a;
-  --secondary: #242424;
-  --background: #242424;
-  --text: #ffffffde;
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap");
 
-  --logo-font: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+:root {
+  --primary: #ffffff;
+  --secondary: #f9f9f9;
+  --background: #f9f9f9;
+  --text: #1a1a1a;
+
+  --logo-font: "Merriweather", serif;
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -46,10 +48,10 @@ button {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
-  font-size: 1em;
+  font-size: 18px;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--secondary);
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -59,19 +61,4 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --primary: #ffffff;
-    --secondary: #f9f9f9;
-    --background: #f9f9f9;
-    --text: #213547;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
 }
