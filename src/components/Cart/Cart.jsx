@@ -1,9 +1,10 @@
-import React from "react";
 import PropTypes from "prop-types";
 import CartItem from "../CartItem/CartItem";
 import Price from "../Price/Price";
+import styles from "./Cart.module.css";
+import CloseIcon from "@mui/icons-material/Close";
 
-function Cart({ toggleCart, cart, setCart, removeItem, products }) {
+function Cart({ isCartOpen, toggleCart, cart, setCart, removeItem, products }) {
   const setAmount = (id, amount) => {
     if (amount < 1) {
       removeItem(id);
@@ -24,33 +25,48 @@ function Cart({ toggleCart, cart, setCart, removeItem, products }) {
     }, 0);
   };
 
+  const handleBackgroundClick = (e) => {
+    if (e.target === e.currentTarget) toggleCart();
+  };
+
   return (
-    <aside>
-      <div>
-        <h1>SHOPPING BAG</h1>
-        <button onClick={toggleCart}>X</button>
-      </div>
-      <div>
-        {cart.map((item) => (
-          <CartItem
-            key={item.id}
-            item={products.find((product) => product.id === item.id)}
-            amount={item.amount}
-            setAmount={(amount) => setAmount(item.id, amount)}
-            remove={() => removeItem(item.id)}
-          />
-        ))}
-      </div>
-      <div>
-        <div>
-          <h2>
-            <span>SUBTOTAL:</span>
-            <Price price={calcTotal()} />
-          </h2>
-          <button>CHECKOUT</button>
+    <div
+      className={isCartOpen ? styles.containerOpen : styles.container}
+      onClick={handleBackgroundClick}
+    >
+      <aside className={isCartOpen ? styles.asideOpen : styles.aside}>
+        <div className={styles.top}>
+          <h1 className={styles.h1}>SHOPPING BAG</h1>
+          <button className={styles.close} onClick={toggleCart}>
+            <CloseIcon sx={{ color: "#1a1a1a", fontSize: "32px" }} />
+          </button>
         </div>
-      </div>
-    </aside>
+        <div className={styles.middle}>
+          {cart.length === 0 && (
+            <p className={styles.p}>No items have been added to your bag.</p>
+          )}
+          {cart.map((item) => (
+            <CartItem
+              key={item.id}
+              amount={item.amount}
+              toggleCart={toggleCart}
+              item={products.find((product) => product.id === item.id)}
+              setAmount={(amount) => setAmount(item.id, amount)}
+              remove={() => removeItem(item.id)}
+            />
+          ))}
+        </div>
+        {cart.length > 0 && (
+          <div className={styles.bottom}>
+            <h2 className={styles.h2}>
+              <span>SUBTOTAL:</span>
+              <Price price={calcTotal()} />
+            </h2>
+            <button className={styles.checkout}>CHECKOUT</button>
+          </div>
+        )}
+      </aside>
+    </div>
   );
 }
 
