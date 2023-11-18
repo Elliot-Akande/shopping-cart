@@ -3,20 +3,14 @@ import styles from "./ProductAmountControl.module.css";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 
-function ProductAmountControl({ amount, setAmount }) {
-  const increment = () => {
-    setAmount((prev) => {
-      if (isNaN(parseInt(prev, 10)) || prev < 1) return 1;
-      return prev + 1;
-    });
-  };
-
-  const decrement = () => {
-    setAmount((prev) => {
-      if (isNaN(parseInt(prev, 10)) || prev <= 1) return 1;
-      return prev - 1;
-    });
-  };
+function ProductAmountControl({
+  amount,
+  setAmount,
+  handleIncrement,
+  handleDecrement,
+}) {
+  const increment = handleIncrement || (() => setAmount(amount + 1));
+  const decrement = handleDecrement || (() => setAmount(amount - 1));
 
   const handleChange = (e) => {
     const { value } = e.target;
@@ -48,8 +42,10 @@ function ProductAmountControl({ amount, setAmount }) {
 }
 
 ProductAmountControl.propTypes = {
-  amount: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  setAmount: PropTypes.func,
+  amount: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  setAmount: PropTypes.func.isRequired,
+  handleIncrement: PropTypes.func,
+  handleDecrement: PropTypes.func,
 };
 
 export default ProductAmountControl;

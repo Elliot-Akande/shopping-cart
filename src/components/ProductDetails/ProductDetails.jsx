@@ -16,6 +16,20 @@ function ProductDetails() {
     if (!isNaN(amount) && amount > 0) cartManager.modify(id, amount);
   };
 
+  const handleIncrement = () => {
+    setAmount((prev) => {
+      if (isNaN(parseInt(prev, 10)) || prev < 1) return 1;
+      return prev + 1;
+    });
+  };
+
+  const handleDecrement = () => {
+    setAmount((prev) => {
+      if (isNaN(parseInt(prev, 10)) || prev <= 1) return 1;
+      return prev - 1;
+    });
+  };
+
   return (
     <main className={styles.main}>
       {product && (
@@ -29,7 +43,12 @@ function ProductDetails() {
               <Price price={product.price} />
             </div>
             <div className={styles.section}>
-              <ProductAmountControl amount={amount} setAmount={setAmount} />
+              <ProductAmountControl
+                amount={amount}
+                setAmount={setAmount}
+                handleIncrement={handleIncrement}
+                handleDecrement={handleDecrement}
+              />
               <button className={styles.button} onClick={handleAddToCart}>
                 ADD TO CART
               </button>
