@@ -27,10 +27,13 @@
   gap: 10px;
 }
 
-.link {
+.h2 {
   font-size: 14px;
   font-weight: normal;
   line-height: 1.3;
+}
+
+.link {
   color: var(--text);
   cursor: pointer;
 }

@@ -23,10 +23,16 @@ function CartItem({ item, amount, setAmount, remove, modify, toggleCart }) {
       />
       <div className={styles.details}>
         <div className={styles.top}>
-          <a className={styles.link} onClick={handleClick}>
-            {title}
-          </a>
-          <button className={styles.remove} onClick={remove}>
+          <h2 className={styles.h2}>
+            <a className={styles.link} onClick={handleClick}>
+              {title}
+            </a>
+          </h2>
+          <button
+            className={styles.remove}
+            onClick={remove}
+            aria-label="delete"
+          >
             <DeleteOutlineIcon className={styles.delete} />
           </button>
         </div>
