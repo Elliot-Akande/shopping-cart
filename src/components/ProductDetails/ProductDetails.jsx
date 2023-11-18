@@ -1,5 +1,5 @@
 import { useOutletContext, useParams } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ProductAmountControl from "../ProductAmountControl/ProductAmountControl";
 import styles from "./ProductDetails.module.css";
 import Price from "../Price/Price";
@@ -8,6 +8,10 @@ import Rating from "../Rating/Rating";
 function ProductDetails() {
   const [amount, setAmount] = useState(1);
   const { products, cartManager, toggleCart } = useOutletContext();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const id = parseInt(useParams().id, 10);
   const product = products ? products.find((item) => item.id === id) : null;
