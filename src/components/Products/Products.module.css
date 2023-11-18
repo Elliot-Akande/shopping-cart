@@ -22,3 +22,14 @@
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 30px;
 }
+
+@media (max-width: 600px) {
+  .main {
+    padding: 30px 20px;
+  }
+
+  .container,
+  .products {
+    gap: 20px;
+  }
+}

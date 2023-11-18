@@ -57,3 +57,22 @@
 .button:focus {
   outline: none;
 }
+
+@media (max-width: 950px) {
+  .main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .img {
+    height: min(500px, 78vw);
+    width: min(500px, 78vw);
+    padding: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .main {
+    padding: 30px 25px;
+  }
+}

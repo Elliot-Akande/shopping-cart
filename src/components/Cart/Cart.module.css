@@ -86,3 +86,9 @@
   border-color: transparent;
   color: var(--accent);
 }
+
+@media (max-width: 600px) {
+  .aside {
+    width: 100vw;
+  }
+}
