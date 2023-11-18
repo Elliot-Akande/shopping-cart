@@ -14,13 +14,21 @@ function ProductAmountControl({
 
   return (
     <div className={styles.div}>
-      <button className={styles.left} onClick={decrement}>
+      <button
+        className={styles.left}
+        onClick={decrement}
+        aria-label="decrement amount"
+      >
         <RemoveIcon sx={{ color: "#fff", fontSize: "18px" }} />
       </button>
       <div className={styles.amount} aria-label="amount">
         {amount}
       </div>
-      <button className={styles.right} onClick={increment}>
+      <button
+        className={styles.right}
+        onClick={increment}
+        aria-label="increment amount"
+      >
         <AddIcon sx={{ color: "#fff", fontSize: "18px" }} />
       </button>
     </div>
