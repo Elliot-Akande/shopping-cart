@@ -8,7 +8,7 @@ function Price({ price }) {
   const getPence = () => {
     if (split.length <= 1) return "00";
     if (split[1] < 10) return split[1] * 10;
-    return split[1];
+    return split[1].slice(0, 2);
   };
 
   return (
