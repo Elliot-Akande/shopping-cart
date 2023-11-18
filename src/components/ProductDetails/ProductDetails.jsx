@@ -49,7 +49,7 @@ function ProductDetails() {
     <main className={styles.main}>
       <button className={styles.back} onClick={handleBackButton}>
         <ArrowBackIosIcon className={styles.arrow} aria-hidden="true" />
-        {getCategory().toUpperCase()}
+        {product ? getCategory().toUpperCase() : "HOME"}
       </button>
       {product && (
         <div className={styles.container}>
