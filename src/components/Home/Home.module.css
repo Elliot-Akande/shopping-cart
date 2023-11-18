@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: end;
 
-  background-image: url(https://images.unsplash.com/photo-1692736933732-ad902fc34626?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-image: url("/assets/bg-regular.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -48,4 +48,10 @@
 
 * {
   margin: 0;
+}
+
+@media (min-width: 1300px) {
+  .main {
+    background-image: url("/assets/bg-wide.jpg");
+  }
 }
