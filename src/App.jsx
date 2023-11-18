@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
+import Cart from "./components/Cart/Cart";
 
 const useProductData = () => {
   const [products, setProducts] = useState(null);
@@ -57,9 +58,22 @@ function App() {
   const [cart, setCart] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
 
+  const toggleCart = () => {
+    setIsCartOpen((prev) => !prev);
+  };
+
   return (
     <>
-      <NavBar />
+      <NavBar toggleCart={toggleCart} />
+      {isCartOpen && (
+        <Cart
+          toggleCart={toggleCart}
+          cart={cart}
+          setCart={setCart}
+          removeItem={cartManager(cart, setCart).remove}
+          products={products}
+        />
+      )}
       {error ? (
         <p>
           There was a problem loading page data. If this problem persists please
@@ -70,7 +84,7 @@ function App() {
           context={{
             products,
             isCartOpen,
-            setIsCartOpen,
+            toggleCart,
             cart,
             cartManager: cartManager(cart, setCart),
           }}
