@@ -65,15 +65,14 @@ function App() {
   return (
     <>
       <NavBar toggleCart={toggleCart} />
-      {isCartOpen && (
-        <Cart
-          toggleCart={toggleCart}
-          cart={cart}
-          setCart={setCart}
-          removeItem={cartManager(cart, setCart).remove}
-          products={products}
-        />
-      )}
+      <Cart
+        toggleCart={toggleCart}
+        isCartOpen={isCartOpen}
+        cart={cart}
+        setCart={setCart}
+        removeItem={cartManager(cart, setCart).remove}
+        products={products}
+      />
       {error ? (
         <p>
           There was a problem loading page data. If this problem persists please
