@@ -12,30 +12,16 @@ function ProductAmountControl({
   const increment = handleIncrement || (() => setAmount(amount + 1));
   const decrement = handleDecrement || (() => setAmount(amount - 1));
 
-  const handleChange = (e) => {
-    const { value } = e.target;
-    if (!isNaN(parseInt(value, 10))) {
-      setAmount(parseInt(value, 10));
-    } else {
-      setAmount(value);
-    }
-  };
-
   return (
     <div className={styles.div}>
       <button className={styles.left} onClick={decrement}>
-        <RemoveIcon sx={{ color: "#fff" }} />
+        <RemoveIcon sx={{ color: "#fff", fontSize: "18px" }} />
       </button>
-      <input
-        className={styles.input}
-        type="number"
-        name="amount"
-        value={amount}
-        onChange={handleChange}
-        min={1}
-      />
+      <div className={styles.amount} aria-label="amount">
+        {amount}
+      </div>
       <button className={styles.right} onClick={increment}>
-        <AddIcon sx={{ color: "#fff" }} />
+        <AddIcon sx={{ color: "#fff", fontSize: "18px" }} />
       </button>
     </div>
   );
