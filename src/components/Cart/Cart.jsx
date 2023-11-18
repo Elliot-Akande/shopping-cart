@@ -37,7 +37,11 @@ function Cart({ isCartOpen, toggleCart, cart, setCart, removeItem, products }) {
       <aside className={isCartOpen ? styles.asideOpen : styles.aside}>
         <div className={styles.top}>
           <h1 className={styles.h1}>SHOPPING BAG</h1>
-          <button className={styles.close} onClick={toggleCart}>
+          <button
+            className={styles.close}
+            onClick={toggleCart}
+            aria-label="close"
+          >
             <CloseIcon sx={{ color: "#1a1a1a", fontSize: "32px" }} />
           </button>
         </div>
