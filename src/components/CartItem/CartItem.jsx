@@ -1,18 +1,40 @@
-import React from "react";
-import PropTypes from "prop-types";
+import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
+import { useNavigate } from "react-router-dom";
 import Price from "../Price/Price";
 import ProductAmountControl from "../ProductAmountControl/ProductAmountControl";
+import styles from "./CartItem.module.css";
 
-function CartItem({ item, amount, setAmount, remove, modify }) {
-  const { image, title, price } = item;
+function CartItem({ item, amount, setAmount, remove, modify, toggleCart }) {
+  const { id, image, title, price } = item;
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    toggleCart();
+    navigate(`product/${id}`);
+  };
 
   return (
-    <div>
-      <img src={image} alt={title} />
-      <h2>{title}</h2>
-      <button onClick={remove}>Delete</button>
-      <Price price={price} />
-      <ProductAmountControl amount={amount} setAmount={setAmount} />
+    <div className={styles.container}>
+      <img
+        className={styles.img}
+        src={image}
+        alt={title}
+        onClick={handleClick}
+      />
+      <div className={styles.details}>
+        <div className={styles.top}>
+          <a className={styles.link} onClick={handleClick}>
+            {title}
+          </a>
+          <button className={styles.remove} onClick={remove}>
+            <DeleteOutlineIcon className={styles.delete} />
+          </button>
+        </div>
+        <div className={styles.bottom}>
+          <Price price={price} />
+          <ProductAmountControl amount={amount} setAmount={setAmount} />
+        </div>
+      </div>
     </div>
   );
 }
