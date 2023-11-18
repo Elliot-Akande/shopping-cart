@@ -7,27 +7,22 @@ import Rating from "../Rating/Rating";
 
 function ProductDetails() {
   const [amount, setAmount] = useState(1);
-  const { products, cartManager } = useOutletContext();
+  const { products, cartManager, toggleCart } = useOutletContext();
 
   const id = parseInt(useParams().id, 10);
   const product = products ? products.find((item) => item.id === id) : null;
 
   const handleAddToCart = () => {
-    if (!isNaN(amount) && amount > 0) cartManager.modify(id, amount);
+    cartManager.modify(id, amount);
+    toggleCart();
   };
 
   const handleIncrement = () => {
-    setAmount((prev) => {
-      if (isNaN(parseInt(prev, 10)) || prev < 1) return 1;
-      return prev + 1;
-    });
+    setAmount((prev) => (prev > 0 ? prev + 1 : 1));
   };
 
   const handleDecrement = () => {
-    setAmount((prev) => {
-      if (isNaN(parseInt(prev, 10)) || prev <= 1) return 1;
-      return prev - 1;
-    });
+    setAmount((prev) => (prev > 1 ? prev - 1 : 1));
   };
 
   return (
