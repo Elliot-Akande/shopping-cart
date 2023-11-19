@@ -1,6 +1,7 @@
+import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import styles from "./NavBar.module.css";
-import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 
 function NavBar({ toggleCart }) {
   return (
@@ -37,5 +38,9 @@ function NavBar({ toggleCart }) {
     </>
   );
 }
+
+NavBar.propTypes = {
+  toggleCart: PropTypes.func,
+};
 
 export default NavBar;

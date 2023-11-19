@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import "./App.css";
-import NavBar from "./components/NavBar/NavBar";
 import Cart from "./components/Cart/Cart";
+import NavBar from "./components/NavBar/NavBar";
 
 const useProductData = () => {
   const [products, setProducts] = useState(null);

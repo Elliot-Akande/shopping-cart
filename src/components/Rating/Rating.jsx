@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
-import PropTypes from "prop-types";
-import StarBorderIcon from "@mui/icons-material/StarBorder";
 import StarIcon from "@mui/icons-material/Star";
+import StarBorderIcon from "@mui/icons-material/StarBorder";
 import StarHalfIcon from "@mui/icons-material/StarHalf";
+import PropTypes from "prop-types";
+import { useEffect, useState } from "react";
 import styles from "./Rating.module.css";
 
 function Rating({ rating }) {
