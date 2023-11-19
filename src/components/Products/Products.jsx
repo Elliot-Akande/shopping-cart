@@ -1,16 +1,10 @@
-import {
-  useOutletContext,
-  useParams,
-  useNavigate,
-  Link,
-} from "react-router-dom";
+import { useOutletContext, useParams, Link } from "react-router-dom";
 import ProductCard from "../ProductCard/ProductCard";
 import styles from "./Products.module.css";
 
 function Products() {
   const { category } = useParams();
   const { products } = useOutletContext();
-  const navigate = useNavigate();
 
   const getTitle = () => {
     return category.toUpperCase();
