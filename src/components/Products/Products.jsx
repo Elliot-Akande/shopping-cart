@@ -1,13 +1,18 @@
-import { useOutletContext, useParams } from "react-router-dom";
+import {
+  useOutletContext,
+  useParams,
+  useNavigate,
+  Link,
+} from "react-router-dom";
 import ProductCard from "../ProductCard/ProductCard";
 import styles from "./Products.module.css";
 
 function Products() {
   const { category } = useParams();
   const { products } = useOutletContext();
+  const navigate = useNavigate();
 
   const getTitle = () => {
-    if (!category) return "Loading...";
     return category.toUpperCase();
   };
 
@@ -17,8 +22,10 @@ function Products() {
         return "jewelery";
       case "technology":
         return "electronics";
+      case "clothing":
+        return "clothing";
       default:
-        return category;
+        return null;
     }
   };
 
@@ -36,6 +43,12 @@ function Products() {
     <main className={styles.main}>
       <div className={styles.container}>
         <h1 className={styles.title}>{title}</h1>
+        {filtered.length === 0 && (
+          <div>
+            <p>This category does not exist.</p>
+            <Link to="/">Take me home</Link>
+          </div>
+        )}
         <div className={styles.products}>
           {products &&
             filtered.map((product) => (
