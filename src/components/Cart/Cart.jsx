@@ -1,8 +1,8 @@
+import CloseIcon from "@mui/icons-material/Close";
 import PropTypes from "prop-types";
 import CartItem from "../CartItem/CartItem";
 import Price from "../Price/Price";
 import styles from "./Cart.module.css";
-import CloseIcon from "@mui/icons-material/Close";
 
 function Cart({ isCartOpen, toggleCart, cart, setCart, removeItem, products }) {
   const setAmount = (id, amount) => {
@@ -74,6 +74,13 @@ function Cart({ isCartOpen, toggleCart, cart, setCart, removeItem, products }) {
   );
 }
 
-Cart.propTypes = {};
+Cart.propTypes = {
+  isCartOpen: PropTypes.bool,
+  toggleCart: PropTypes.func,
+  cart: PropTypes.arrayOf(PropTypes.object),
+  setCart: PropTypes.func,
+  removeItem: PropTypes.func,
+  products: PropTypes.arrayOf(PropTypes.object),
+};
 
 export default Cart;
