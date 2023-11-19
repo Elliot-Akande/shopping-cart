@@ -1,11 +1,11 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import Price from "../Price/Price";
 import Rating from "../Rating/Rating";
 import styles from "./ProductCard.module.css";
-import Price from "../Price/Price";
 
 function ProductCard({ product }) {
-  const { id, title, price, category, description, image, rating } = product;
+  const { id, title, price, image, rating } = product;
 
   return (
     <Link to={`/product/${id}`} className={styles.link}>
@@ -22,10 +22,9 @@ function ProductCard({ product }) {
 
 ProductCard.propTypes = {
   product: PropTypes.shape({
+    id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     title: PropTypes.string,
     price: PropTypes.number,
-    category: PropTypes.string,
-    description: PropTypes.string,
     image: PropTypes.string,
     rating: PropTypes.object,
   }),
