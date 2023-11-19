@@ -1,10 +1,11 @@
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
+import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 import Price from "../Price/Price";
 import ProductAmountControl from "../ProductAmountControl/ProductAmountControl";
 import styles from "./CartItem.module.css";
 
-function CartItem({ item, amount, setAmount, remove, modify, toggleCart }) {
+function CartItem({ item, amount, setAmount, remove, toggleCart }) {
   const { id, image, title, price } = item;
   const navigate = useNavigate();
 
@@ -45,6 +46,17 @@ function CartItem({ item, amount, setAmount, remove, modify, toggleCart }) {
   );
 }
 
-CartItem.propTypes = {};
+CartItem.propTypes = {
+  item: PropTypes.shape({
+    id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    image: PropTypes.string,
+    title: PropTypes.string,
+    price: PropTypes.number,
+  }),
+  amount: PropTypes.number,
+  setAmount: PropTypes.func,
+  remove: PropTypes.func,
+  toggleCart: PropTypes.func,
+};
 
 export default CartItem;
