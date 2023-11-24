@@ -1,8 +1,10 @@
 # Akande Shop: A React Project
 
+![Akande-shop](https://github.com/Elliot-Akande/shopping-cart/assets/92980481/29343329-0a5c-44cd-8552-ac61da5a13b9)
+
 Welcome to Akande Shop, a dynamic and interactive e-commerce platform built with React. This project showcases an application of modern web development techniques and practices, making it an excellent demonstration of proficiency in React and its associated technologies.
 
-![Akande-shop](https://github.com/Elliot-Akande/shopping-cart/assets/92980481/29343329-0a5c-44cd-8552-ac61da5a13b9)
+For a live demo, [click here](https://main--akande-shop.netlify.app/) 👈
 
 ## Overview
 
