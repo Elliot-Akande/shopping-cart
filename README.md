@@ -8,7 +8,7 @@ For a live demo, [click here](https://main--akande-shop.netlify.app/) 👈
 
 ## Overview
 
-Akande Shop is a comprehensive e-commerce platform that includes a home page and various shopping pages. The shopping pages are accessible the categories in the navigation bar at the top of the screen. Each category displays a collection of products in a card format, complete with product details. 
+Akande Shop is a comprehensive e-commerce platform that includes a home page and various shopping pages. The shopping pages are accessible via the categories in the navigation bar at the top of the screen. Each category displays a collection of products in a card format, complete with product details. 
 
 Clicking on a product card navigates the user to a detailed product page where they can review the product's specifics and add a custom quantity of the item to their cart. The cart, a drawer that slides in from the right side of the screen, displays all the items added by the user, the quantity of each item, and the subtotal. Users can update the quantity or remove items directly from the cart. The cart also features a 'Proceed to Checkout' button, which currently serves as a placeholder for future functionality.
 
@@ -29,6 +29,7 @@ Clicking on a product card navigates the user to a detailed product page where t
 
 Additional technologies that are worth mentioning:
 
+- **Fake Store API**: The project utilizes data from Fake Store API, a free online REST API that you can use whenever you need some fake data. It's great for tutorials, testing new libraries, sharing code examples, and more.
 - **PropTypes**: A library for typechecking in React. It's used to ensure components receive props of the correct type. If a component receives a prop of an incorrect type, PropTypes will generate a warning message in the console.
 - **CSS Modules**: A CSS file in which all class names and animation names are scoped locally by default. This leads to a much more manageable codebase, free of naming conflicts.
 - **React Router**: A standard library for routing in React. It enables the navigation among views of various components in a React Application, allows changing the browser URL, and keeps the UI in sync with the URL.
@@ -36,6 +37,3 @@ Additional technologies that are worth mentioning:
 ## Future Work
 
 The current version of Akande Shop is a demonstration of the potential of React in building dynamic and interactive web applications. Future work will focus on expanding the functionality of the 'Proceed to Checkout' button and integrating a back-end to handle data persistence and user authentication.
-
- 
-https://main--akande-shop.netlify.app/
