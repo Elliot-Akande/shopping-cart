@@ -2,6 +2,8 @@
 
 Welcome to Akande Shop, a dynamic and interactive e-commerce platform built with React. This project showcases an application of modern web development techniques and practices, making it an excellent demonstration of proficiency in React and its associated technologies.
 
+![Akande-shop](https://github.com/Elliot-Akande/shopping-cart/assets/92980481/29343329-0a5c-44cd-8552-ac61da5a13b9)
+
 ## Overview
 
 Akande Shop is a comprehensive e-commerce platform that includes a home page and various shopping pages. The shopping pages are accessible the categories in the navigation bar at the top of the screen. Each category displays a collection of products in a card format, complete with product details. 
